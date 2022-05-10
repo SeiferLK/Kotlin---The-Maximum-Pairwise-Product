@@ -1,0 +1,25 @@
+import java.util.* 
+fun main() {
+    val scanner = Scanner(System.`in`) 
+    val n = readln().toInt() 
+    var temp = 0
+    var temp2 = 0
+    if (n == 1 && scanner.hasNextInt()) {
+        println(n * scanner.nextInt()) 
+        return
+    } else { 
+        for (i in 1..n) {
+            while (scanner.hasNextInt()) {
+                val i = scanner.nextInt() 
+                if (i > temp) {
+                    temp2 = temp
+                    temp = i
+                } else if (i > temp2) {
+                    temp2 = i
+                }
+            }
+        }
+    }
+    println(temp * temp2)
+    scanner.close() 
+}
